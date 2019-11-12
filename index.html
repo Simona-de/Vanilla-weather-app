@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://kit.fontawesome.com/422f0e7669.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|McLaren&display=swap" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,8 +17,36 @@
   </head>
   <div class="container">
   <body>
-    Hello World
-    <a href="" class="btn btn-primary">heeeeellloooooo</a>
+
+    <h1>Porto</h1>
+    <p>Monday 16:00</p>
+    <form id="enter-city">
+        <input type="text" placeholder="enter city" id="city-input" />
+        <input type="submit" value="search" />
+    </form>
+    <button id="current-loc">current location</button>
+    <div class="row">
+        <div class="col-6">
+            <ul>
+                <li>
+            <i class="fas fa-cloud"></i>
+            cloudy
+            </li>
+            <li>
+                12°
+            </li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <ul>
+                <li>
+                    Humidity 
+                </li>
+                <li>Wind</li>
+            </ul>
+        </div>
+    </div>
+
     </div>
     <script src="src/script.js"></script>
     
