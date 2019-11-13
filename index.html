@@ -17,14 +17,14 @@
   </head>
   <div class="container">
   <body>
-<div class="weather-html"></div>
+<div class="weather-html">
     <h1>Porto</h1>
     <p>Monday 16:00</p>
     <form id="enter-city">
         <input type="text" placeholder="enter city" id="city-input" />
         <input type="submit" value="search" />
     </form>
-    <button id="current-loc">current location</button>
+    <button id="current-Loc">current location</button>
     <div class="row">
         <div class="col-6">
             <ul>
@@ -33,22 +33,23 @@
             cloudy
             </li>
             <li>
-                12°
+               <span class="temperature"> 12°</span><span class="unit"> c | f</span>
             </li>
             </ul>
         </div>
         <div class="col-6">
-            <ul>
+            <ul class="details">
                 <li>
-                    Humidity 
+                    Humidity 65%
                 </li>
-                <li>Wind</li>
+                <li>Wind 5%</li>
             </ul>
         </div>
     </div>
     <small>
 <a href="https://hopeful-euler-f54ff6.netlify.com" target="blank"> Oper source code</a> by Simona Delogu
 </small>
+</div>
 </div>   
  </div>
 
