@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/422f0e7669.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|McLaren&display=swap" rel="stylesheet" />
     <link
@@ -18,7 +19,7 @@
   <div class="container">
   <body>
 <div class="weather-html">
-    <h1>Porto</h1>
+    <h1 id="city"></h1>
     <p>Monday 16:00</p>
     <form id="enter-city">
         <input type="text" placeholder="enter city" id="city-input" />
@@ -30,19 +31,19 @@
             <ul>
                 <li>
             <i class="fas fa-cloud"></i>
-            cloudy
+            <span id="sky"></span>
             </li>
             <li>
-               <span class="temperature"> 12°</span><span class="unit"> c | f</span>
+               <span class="temperature" id="temp"> </span><span class="unit"> °c | f</span>
             </li>
             </ul>
         </div>
         <div class="col-6">
             <ul class="details">
-                <li>
-                    Humidity 65%
+                <li >
+                    Humidity <span id="humidity"></span>%
                 </li>
-                <li>Wind 5%</li>
+                <li>Wind <span id="wind"></span>km/h</li>
             </ul>
         </div>
     </div>
