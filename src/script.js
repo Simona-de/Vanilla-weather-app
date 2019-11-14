@@ -37,13 +37,25 @@ function showTemperature(response) {
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
-    ` http://openweathermap.org/img/wn/${response.date.weather[0].icon}@2x.png) `
+    ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png `
   );
   iconElement = document.querySelector("#icon");
   iconElement.setAttribute("alt", response.data.weather[0].description);
   console.log(response);
 }
 
-let apiKey = "71f687cf35794567462cfbc034ffcc9d";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=sydney&units=metric&appid=${apiKey}`;
-axios.get(`${apiUrl}`).then(showTemperature);
+function search(city) {
+  let apiKey = "71f687cf35794567462cfbc034ffcc9d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function TakeCareSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search("tokyo");
+
+let form = document.querySelector("#enter-city");
+form.addEventListener("submit", TakeCareSubmit);
