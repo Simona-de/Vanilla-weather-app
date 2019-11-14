@@ -12,7 +12,7 @@ li {
   padding: 0;
 }
 .weather-html {
-  max-width: 600px;
+  max-width: 700px;
   margin: 30px auto;
   border: 3px linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
   border-radius: 12px;
@@ -36,4 +36,7 @@ li {
 #current-Loc {
   position: relative;
   right: 39px;
+}
+#forecast {
+  font-size: 2px;
 }

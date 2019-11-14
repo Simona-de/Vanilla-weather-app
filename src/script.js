@@ -53,7 +53,6 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
-
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
@@ -71,6 +70,13 @@ function showForecast(response) {
   </div>
   `;
   }
+}
+function showPosition(position) {
+  let apiKey = "71f687cf35794567462cfbc034ffcc9d";
+  let lat = Math.round(position.coords.latitude);
+  let lon = Math.round(position.coords.longitude);
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showTemperature);
 }
 
 function search(city) {
@@ -109,5 +115,12 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let button = document.querySelector("button");
+button.addEventListener("click", getCurrentPosition);
 
 search("tokyo");
