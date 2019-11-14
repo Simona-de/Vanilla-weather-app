@@ -7,7 +7,7 @@ body {
 
 li {
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -19,9 +19,7 @@ li {
   color: rgb(92, 90, 90);
   background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
 }
-.fa-cloud {
-  font-size: 50px;
-}
+
 .temperature {
   font-size: 60px;
 }
@@ -34,6 +32,7 @@ li {
   position: relative;
   top: 38px;
 }
+
 #current-Loc {
   position: relative;
   right: 39px;
