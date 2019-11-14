@@ -24,6 +24,7 @@ function formatDate(timestamp) {
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let dateElement = document.querySelector("#date");
@@ -41,7 +42,6 @@ function showTemperature(response) {
   );
   iconElement = document.querySelector("#icon");
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response);
 }
 
 function search(city) {
@@ -55,7 +55,28 @@ function TakeCareSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-search("tokyo");
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiustemperature);
+}
+
+let celsiustemperature = null;
 
 let form = document.querySelector("#enter-city");
 form.addEventListener("submit", TakeCareSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("tokyo");
