@@ -32,6 +32,10 @@ li {
   position: relative;
   top: 38px;
 }
+.col-small-2 {
+  position: relative;
+  right: -60px;
+}
 
 #current-Loc {
   position: relative;
